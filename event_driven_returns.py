@@ -104,4 +104,4 @@ if __name__ == "__main__":
     excess_returns = get_excess_returns(start, end, df_signals["assetid"])
 
     df_post_event_returns = post_event_returns(df_signals, excess_returns)
-    df_post_event_returns.to_csv(event_drive_path)
+    df_post_event_returns.to_csv(event_drive_path + "event_driven_returns.csv")
