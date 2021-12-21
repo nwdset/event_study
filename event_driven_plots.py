@@ -10,7 +10,7 @@ def event_driven_plot(event_returns: pd.DataFrame, event=None) -> plt.Axes:
             "Event returns dataframe must have columns: date, assetid, signal, fdasfsd"
         )
 
-    if event not in event_returns.colums:
+    if event not in event_returns["signal"]:
         raise KeyError("Selected signal doesn't exist")
 
     event_returns = event_returns.set_index(["date", "assetid", "signal"]).cumsum(
