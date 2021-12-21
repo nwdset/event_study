@@ -17,7 +17,7 @@ def event_driven_plot(event_returns: pd.DataFrame, event=None) -> plt.Axes:
         axis=1
     )
 
-    fig, ax = plt.subplots(3, 1, figsize=(16, 16))
+    fig, ax = plt.subplots(3, 1, figsize=(12, 8))
     event_returns.query(f"signal == {event}").boxplot(ax=ax[0])
     event_returns.query(f"signal == {event}").mean().plot(ax=ax[1])
     event_returns.query(f"signal == {event}").pipe(
