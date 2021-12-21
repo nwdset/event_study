@@ -34,4 +34,4 @@ def event_driven_plot(event_returns: pd.DataFrame, event=None) -> plt.Axes:
 if __name__ == "__main__":
     event_drive_returns = pd.read_csv("./event_driven_returns.csv", index_col=0)
     figure = event_driven_plot(event_drive_returns, event=1)
-    plt.show()
+    plt.savefig("example.png")
