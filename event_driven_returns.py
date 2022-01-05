@@ -36,10 +36,7 @@ def get_excess_returns(start, end, assetids):
         beta = (
             RollingOLS.from_formula(
                 f"{col} ~ spy + 1",
-                pd.concat(
-                    [assetid_returns_copy[col].fillna(spy_returns), spy_returns],
-                    axis=1,
-                ),
+                pd.concat([assetid_returns_copy[col], spy_returns], axis=1).dropna(),
                 window=60,
             )
             .fit()
